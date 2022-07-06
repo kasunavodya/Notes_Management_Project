@@ -1,0 +1,27 @@
+const router = require('express').Router();
+
+const UserReportModel = require('../models/UserReport');
+
+router.route('/addUserReport').post(async (req, res) => {
+    if(req.body){
+        const UserReport = new UserReportModel(req.body);
+        await UserReport.save()
+        .then(data => {
+            res.status(200).send({data: data});
+        }).catch(error => {
+            res.status(500).send({error: error});
+        })
+    }
+});
+
+router.route('/getAllUserReports').get(async (req, res) => {
+        await UserReportModel.find({})
+        .then(data => {
+            res.status(200).send({data: data});
+        }).catch(error => {
+            res.status(500).send({error: error});
+        })
+});
+
+module.exports = router;
+
