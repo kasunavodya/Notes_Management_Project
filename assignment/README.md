@@ -19,6 +19,7 @@ devDependencies -
 * jest 
 * supertest 
 
+
 ****************** Frontend ******************
 
 dependencies - 
@@ -30,6 +31,7 @@ dependencies -
 * react-dom
 * react-password-checklist
 * react-router-dom
+
 
 **BACKEND FILES**
 
@@ -50,6 +52,7 @@ routes -
 * server.js file
 * gitignore file
 
+
 **FRONTEND FILES**
 
 assets -
@@ -69,6 +72,7 @@ components -
 * index.html file
 * gitignore file
 
+
 **IMPLEMENTATION**
 
 * Create the new account (Registration)
@@ -77,12 +81,14 @@ components -
 * If userType == Administrator, then automatically navigate to the admin Dashboard page.
 * If user forgot his/her password they can reset it using reset PW interface.
 
+
 **IMPLEMENTATION - STUDENT TASKS**
 
 * View all the added notes
 * Create new notes
 * Upate Note
 * Delete Note
+
 
 **IMPLEMENTATION - ADMIN TASKS**
 
