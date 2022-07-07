@@ -1,3 +1,9 @@
+/**
+ * PAGE     -   FOOTER PAGE 
+ * =====================================
+ * CREATED BY           :   Kasuni Makalanda
+ */
+
 import React, { Component } from 'react'
 import '../../assets/css/style.css';
 

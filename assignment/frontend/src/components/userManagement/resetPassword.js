@@ -1,3 +1,11 @@
+/**
+ * SCOPE    -   USER MANAGEMENT
+ * PAGE     -   RESET PW PAGE 
+ * 
+ * =====================================
+ * CREATED BY           :   Kasuni Makalanda
+ */
+
 import React, { Component } from "react";
 import Header from "../header/header";
 import "../../assets/css/resetPassword.css";
@@ -23,6 +31,11 @@ export default class ResetPassword extends Component {
     this.setState({ [e.target.name]: e.target.value });
   }
 
+  /**
+     * DESCRIPTION      -       The function written to get user by ID
+     * METHOD CALLS     -       setState()
+     * API CALL         -       GET USER BY ID
+     */
   componentDidMount() {
     Axios.get(
       `http://localhost:3001/user/getUserById/${this.props.match.params.id}`
@@ -34,6 +47,11 @@ export default class ResetPassword extends Component {
     });
   }
 
+  /**
+    * DESCRIPTION       -       The function written to update PW
+    * METHOD CALLS      -       setState()
+    * API CALL          -       SUBMIT RESET PW
+    */
   onSubmit(e) {
     e.preventDefault();
 

@@ -1,3 +1,11 @@
+/**
+ * SCOPE    -   USER MANAGEMENT
+ * PAGE     -   FORGOT PW PAGE 
+ * 
+ * =====================================
+ * CREATED BY           :   Kasuni Makalanda
+ */
+
 import React, { Component } from 'react'
 import Header from '../header/header';
 import '../../assets/css/forgotPassword.css';
@@ -22,6 +30,11 @@ export default class ForgotPassword extends Component {
         this.setState({ [e.target.name]: e.target.value });
     }
 
+     /**
+    * DESCRIPTION       -       The function written to get the validate user details
+    * METHOD CALLS      -       setState()
+    * API CALL          -       VALIDATE USER by EMAIL
+    */
     onSubmit(e) {
         e.preventDefault();
 

@@ -100,6 +100,14 @@ main h1 {
   background: #ddd;
 }
 
+main h2 {
+  height: 80px;
+  line-height: 76px;
+  font-size: 28px;
+  font-weight: 600;
+  background: rgb(22, 21, 21);
+}
+
 .flex-grid {
   display: flex;
 }
@@ -309,6 +317,7 @@ h1{
   color: black;
   border: 2px solid black;
 }
+
 
 
 
