@@ -63,5 +63,36 @@ router.route('/getAllStudents').get(async (req, res) => {
             res.status(500).send({ error: error });
         })
 });
+
+router.route('/getUserById/:id').get(async (req, res) => {
+    if (req.params && req.params.id) {
+        await UserModel.findById(req.params.id)
+            .then(data => {
+                res.status(200).send({ data: data });
+            }).catch(error => {
+                res.status(500).send({ error: error });
+            })
+    }
+});
+
+router.route("/resetPassword/:id").put(async (req, res) => {
+    
+    const newPassword = req.body.newPassword;
+    const Id = req.params.id;
+
+    try {
+        await UserModel.findById(Id, (err, updatedUserObject) => {
+            updatedUserObject.userPassword = newPassword;
+            updatedUserObject.save()
+                .then(data => {
+                    res.status(200).send({ data: data });
+                }).catch(error => {
+                    res.status(500).send({ error: error });
+                })
+        });
+    } catch (err) {
+        console.log(err);
+    }
+});
    
  module.exports = router;

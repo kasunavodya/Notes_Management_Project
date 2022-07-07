@@ -67,7 +67,7 @@ export default class adminList extends Component {
                         </div>
                         <br />
 
-                        <table class="table border shadow">
+                        <table class="table table-striped table-class" id= "table-id">
                             <thead class="thead-dark">
                                 <tr>
                                     <th scope="col">ADMIN FULLNAME</th>

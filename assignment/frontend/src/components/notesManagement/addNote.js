@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import ss from '../../assets/images/ww.jpg';
+import ss from '../../assets/images/notesImage.jpg';
 import '../../assets/css/admin.css';
 import Axios from 'axios';
 
