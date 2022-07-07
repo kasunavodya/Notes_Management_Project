@@ -62,13 +62,13 @@ export default class userReports extends Component {
                             </div>
                         </div><br /><br />
 
-                        <div class="info" style={{ width: '13%'}}>
+                        <div class="info" style={{ width: '13%' }}>
                             <b><h6>
                                 Total Reports: {this.state.userreport.length}</h6></b>
                         </div>
                         <br />
 
-                        <table class="table border shadow">
+                        <table class="table table-striped table-class" id= "table-id">
                             <thead class="thead-dark">
                                 <tr>
                                     <th scope="col">USER EMAIL</th>
@@ -80,7 +80,7 @@ export default class userReports extends Component {
                                 </tr>
                             </thead>
                             <tbody>
-                            {this.state.userreport.length > 0 && this.state.userreport.filter((values) => {
+                                {this.state.userreport.length > 0 && this.state.userreport.filter((values) => {
                                     if (this.state.searchReport == "") {
                                         return values;
                                     } else if (values.userEmail.toLowerCase().includes(this.state.searchReport.toLowerCase())) {
