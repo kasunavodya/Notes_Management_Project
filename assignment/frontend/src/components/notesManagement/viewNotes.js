@@ -1,3 +1,11 @@
+/**
+ * SCOPE    -   NOTES MANAGEMENT
+ * PAGE     -   VIEW NOTE LIST PAGE 
+ * 
+ * =====================================
+ * CREATED BY           :   Kasuni Makalanda
+ */
+
 import React, { Component } from 'react'
 import '../../assets/css/admin.css';
 import Axios from 'axios';
@@ -20,6 +28,11 @@ export default class viewNotePage extends Component {
         this.setState({ searchNote: e.target.value });
     }
 
+    /**
+     * DESCRIPTION      -       The function written to get all notes details
+     * METHOD CALLS     -       setState()
+     * API CALL         -       GET ALL NOTES
+     */
     componentDidMount(e) {
         Axios.get('http://localhost:3001/note/getAllNotes')
             .then(response => {
@@ -29,10 +42,16 @@ export default class viewNotePage extends Component {
             })
     }
 
+    /**
+     * DESCRIPTION      -       The function to navigate to the update note page
+     */
     navigateToUpdatePage(e, noteId) {
         window.location = `/updateNote/${noteId}`;
     }
 
+    /**
+     * DESCRIPTION      -       The function to navigate to the delete note page
+     */
     navigateToDeletePage(e, noteId) {
         window.location = `/deleteNote/${noteId}`;
     }

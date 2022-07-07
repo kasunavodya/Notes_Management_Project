@@ -4,7 +4,8 @@
   "description": "Notes Management - Backend",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon server.js"
+    "start": "nodemon server.js",
+    "test": "jest --watchAll"
   },
   "author": "Kasuni Makalanda",
   "license": "ISC",
@@ -16,5 +17,9 @@
     "express": "^4.18.1",
     "mongoose": "^6.4.2",
     "nodemon": "^2.0.18"
+  },
+  "devDependencies": {
+    "jest": "^28.1.2",
+    "supertest": "^6.2.4"
   }
 }

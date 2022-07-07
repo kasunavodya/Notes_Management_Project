@@ -1,3 +1,11 @@
+/**
+ * SCOPE    -   USER MANAGEMENT
+ * PAGE     -   REGISTRATION PAGE 
+ * 
+ * =====================================
+ * CREATED BY           :   Kasuni Makalanda
+ */
+
 import React, { Component } from 'react'
 import Axios from 'axios';
 import '../../assets/css/register.css';
@@ -54,6 +62,12 @@ export default class register extends Component {
                         "resetAnswer": this.state.resetAnswer,
                         "imageURL": profilePic
                     }
+
+                    /**
+                      * DESCRIPTION       -       The function written to add user
+                      * METHOD CALLS      -       setState()
+                      * API CALL          -       ADD USER 
+                    */
                     Axios.post('http://localhost:3001/user/addUser', user)
                         .then(response => {
 
@@ -65,6 +79,11 @@ export default class register extends Component {
                                 "datetime": this.state.currentDateTime
                             }
 
+                    /**
+                      * DESCRIPTION       -       The function written to add user report
+                      * METHOD CALLS      -       setState()
+                      * API CALL          -       ADD USER REPORT 
+                    */
                             Axios.post('http://localhost:3001/userreport/addUserReport', userReport)
                                 .then(response => {
                                     alert('User Registration Successfull!!');
@@ -93,17 +112,17 @@ export default class register extends Component {
                             <h1 class="logo__text">DAILY NOTEZ</h1>
                         </div>
                         <div class="thumbnail__content text-center">
-                             <h1 class="heading--primary">Welcome to Daily Notez</h1><br />
-                             <h2 class="heading--secondary">CREATE YOUR ACCOUNT IN HERE</h2>
-                         </div>
-                         <div class="thumbnail__links">
-                             <ul class="list-inline m-b-0 text-center">
-                                 <li><a href="http://alexdevero.com/" target="_blank"><i class="fa fa-globe"></i></a></li>
-                                 <li><a href="https://www.behance.net/alexdevero" target="_blank"><fa class="fa fa-behance"></fa></a></li>
-                                 <li><a href="https://github.com/alexdevero" target="_blank"><i class="fa fa-github"></i></a></li>
-                                 <li><a href="https://twitter.com/alexdevero" target="_blank"><i class="fa fa-twitter"></i></a></li>
-                             </ul>
-                         </div>
+                            <h1 class="heading--primary">Welcome to Daily Notez</h1><br />
+                            <h2 class="heading--secondary">CREATE YOUR ACCOUNT IN HERE</h2>
+                        </div>
+                        <div class="thumbnail__links">
+                            <ul class="list-inline m-b-0 text-center">
+                                <li><a href="http://alexdevero.com/" target="_blank"><i class="fa fa-globe"></i></a></li>
+                                <li><a href="https://www.behance.net/alexdevero" target="_blank"><fa class="fa fa-behance"></fa></a></li>
+                                <li><a href="https://github.com/alexdevero" target="_blank"><i class="fa fa-github"></i></a></li>
+                                <li><a href="https://twitter.com/alexdevero" target="_blank"><i class="fa fa-twitter"></i></a></li>
+                            </ul>
+                        </div>
                         <div class="signup__overlay"></div>
                     </div>
                     <div class="container__child signup__form">
@@ -143,7 +162,7 @@ export default class register extends Component {
                                     value={this.state.password}
                                     onChange={this.onChange}
                                     pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
-                                    title="Must contain at least one  number and one uppercase and lowercase letter, and at least 8 or more characters"
+                                    title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"
                                     required />
                             </div><br />
 

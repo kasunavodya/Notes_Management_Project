@@ -1,3 +1,11 @@
+/**
+ * SCOPE    -   NOTES MANAGEMENT
+ * PAGE     -   ADD NOTE PAGE 
+ * 
+ * =====================================
+ * CREATED BY           :   Kasuni Makalanda
+ */
+
 import React, { Component } from 'react'
 import ss from '../../assets/images/notesImage.jpg';
 import '../../assets/css/admin.css';
@@ -23,12 +31,14 @@ export default class addNotePage extends Component {
         this.setState({ [e.target.name]: e.target.value });
     }
 
+     //form validations
     validate = () => {
         let isError = false;
         const errors = {
             descriptionError: ''
         };
 
+        //check description validation
         if (this.state.description.length < 6) {
             isError = true;
             errors.descriptionError = "Needs to be more than 5 characters long";
@@ -44,6 +54,11 @@ export default class addNotePage extends Component {
         return isError;
     }
 
+    /**
+    * DESCRIPTION       -       The function written to save the note details.
+    * METHOD CALLS      -       setState()
+    * API CALL          -       ADD NOTE DETAILS
+    */
     onSubmit(e) {
         e.preventDefault();
 

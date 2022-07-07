@@ -1,3 +1,11 @@
+/**
+ * SCOPE    -   NOTES MANAGEMENT
+ * PAGE     -   DELETE NOTE PAGE 
+ * 
+ * =====================================
+ * CREATED BY           :   Kasuni Makalanda
+ */
+
 import React, { Component } from 'react'
 import '../../assets/css/admin.css';
 import Axios from 'axios';
@@ -17,6 +25,11 @@ export default class deleteNotePage extends Component {
         }
     }
 
+    /**
+     * DESCRIPTION      -       The function written to get the note details by ID
+     * METHOD CALLS     -       setState()
+     * API CALL         -       GET NOTE BY ID
+     */
     componentDidMount() {
         Axios.get(`http://localhost:3001/note/getNoteById/${this.state.id}`)
             .then(response => {
@@ -30,6 +43,11 @@ export default class deleteNotePage extends Component {
             })
     }
 
+    /**
+    * DESCRIPTION       -       The function written to delete the note details.
+    * METHOD CALLS      -       setState()
+    * API CALL          -       DELETE NOTE DETAILS
+    */
     onSubmit(e) {
         e.preventDefault();
         Axios.delete(`http://localhost:3001/note/deleteNote/${this.state.id}`)
@@ -41,6 +59,9 @@ export default class deleteNotePage extends Component {
             })
     }
 
+    /**
+     * DESCRIPTION      -       The function to navigate to the view notes page
+     */
     navigatetoViewNotePage(e, item_id) {
         window.location = "/viewNotes";
     }

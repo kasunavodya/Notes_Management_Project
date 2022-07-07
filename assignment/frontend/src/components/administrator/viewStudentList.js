@@ -1,3 +1,11 @@
+/**
+ * SCOPE    -   USER MANAGEMENT
+ * PAGE     -   VIEW STUDENT LIST  PAGE 
+ * 
+ * =====================================
+ * CREATED BY           :   Kasuni Makalanda
+ */
+
 import React, { Component } from 'react'
 import '../../assets/css/admin.css';
 import Axios from 'axios';
@@ -11,6 +19,7 @@ export default class studentList extends Component {
     constructor(props) {
         super(props);
         this.onChange = this.onChange.bind(this);
+        this.navigateToUserPage = this.navigateToUserPage.bind(this);
         this.state = initialStates;
     }
 
@@ -18,6 +27,11 @@ export default class studentList extends Component {
         this.setState({ searchUser: e.target.value });
     }
 
+    /**
+     * DESCRIPTION      -       The function written to get all student details
+     * METHOD CALLS     -       setState()
+     * API CALL         -       GET STUDENT DETAILS
+     */
     componentDidMount(e) {
         Axios.get('http://localhost:3001/user/getAllStudents')
             .then(response => {
@@ -25,6 +39,13 @@ export default class studentList extends Component {
             }).catch(error => {
                 alert(error.message);
             });
+    }
+
+    /**
+     * DESCRIPTION      -       The function to navigate to the user list page
+     */
+    navigateToUserPage(e, userId) {
+        window.location = `/userDetails/${userId}`;
     }
 
     render() {
@@ -61,20 +82,20 @@ export default class studentList extends Component {
                             </div>
                         </div><br /><br />
 
-                        <div class="info" style={{ width: '13%'}}>
+                        <div class="info" style={{ width: '13%' }}>
                             <b><h6>
                                 Total Students: {this.state.userlist.length}</h6></b>
                         </div>
                         <br />
 
-                        <table class="table table-striped table-class" id= "table-id">
+                        <table class="table table-striped table-class" id="table-id">
                             <thead class="thead-dark">
                                 <tr>
                                     <th scope="col">STUDENT FULLNAME</th>
                                     <th scope="col">STUDENT EMAIL</th>
                                     <th scope="col">STUDENT CONTACT</th>
-                                    <th scope="col">STUDENT CATEGORY</th>
-
+                                    <th scope="col">STUDENT ACCOUNT TYPE</th>
+                                    <th scope="col">VIEW</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -90,6 +111,11 @@ export default class studentList extends Component {
                                         <td style={{ color: 'blue' }}><u><i>{item.userEmail}</i></u></td>
                                         <td>{"(+94)-" + item.userContact}</td>
                                         <td>{item.userCategory}</td>
+                                        <td>
+                                            <li class="list-inline-item">
+                                                <button class="btn btn-success btn-sm rounded-0" style={{ backgroundColor: 'black' }} type="button" data-toggle="tooltip" data-placement="top" onClick={e => this.navigateToUserPage(e, item._id)} title="Edit"><i class="fa fa-eye"></i></button>
+                                            </li>
+                                        </td>
                                     </tr>
                                 )}
                             </tbody>

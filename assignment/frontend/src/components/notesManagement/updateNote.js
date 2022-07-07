@@ -1,3 +1,11 @@
+/**
+ * SCOPE    -   NOTES MANAGEMENT
+ * PAGE     -   UPDATE NOTE PAGE 
+ * 
+ * =====================================
+ * CREATED BY           :   Kasuni Makalanda
+ */
+
 import React, { Component } from 'react'
 import ss from '../../assets/images/updateImage.jpg';
 import '../../assets/css/admin.css';
@@ -23,6 +31,11 @@ export default class updateNotePage extends Component {
         }
     }
 
+    /**
+     * DESCRIPTION      -       The function written to get the note details by ID
+     * METHOD CALLS     -       setState()
+     * API CALL         -       GET NOTE BY ID
+     */
     componentDidMount() {
         Axios.get(`http://localhost:3001/note/getNoteById/${this.state.id}`)
             .then(response => {
@@ -41,12 +54,14 @@ export default class updateNotePage extends Component {
         this.setState({ [e.target.name]: e.target.value });
     }
 
+    //form validations
     validate = () => {
         let isError = false;
         const errors = {
             descriptionError: ''
         };
 
+        //check description validation
         if (this.state.description.length < 6) {
             isError = true;
             errors.descriptionError = "Needs to be more than 5 characters long";
@@ -62,6 +77,11 @@ export default class updateNotePage extends Component {
         return isError;
     }
 
+    /**
+    * DESCRIPTION       -       The function written to update the note details.
+    * METHOD CALLS      -       setState()
+    * API CALL          -       UPDATE NOTE DETAILS
+    */
     onSubmit(e) {
         e.preventDefault();
 
@@ -85,6 +105,9 @@ export default class updateNotePage extends Component {
         }
     }
 
+    /**
+     * DESCRIPTION      -       The function to navigate to the view notes page
+     */
     navigatetoViewNotePage(e) {
         window.location = `/viewNotes`;
     }
