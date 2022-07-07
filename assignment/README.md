@@ -3,62 +3,71 @@
 **DEPENDENCIES/DEV-DEPENDENCIES INSTALLAION**
 
 ****************** Backend ******************
+
 dependencies - 
-    body-parser
-    config 
-    cors 
-    dotenv 
-    express 
-    mongoose 
-    nodemon 
+
+* body-parser
+* config 
+* cors 
+* dotenv 
+* express 
+* mongoose 
+* nodemon 
 
 devDependencies -
-    jest 
-    supertest 
+
+* jest 
+* supertest 
 
 ****************** Frontend ******************
+
 dependencies - 
-    axios
-    jspdf
-    jspdf-autotable
-    react
-    react-dom
-    react-password-checklist
-    react-router-dom
+
+* axios
+* jspdf
+* jspdf-autotable
+* react
+* react-dom
+* react-password-checklist
+* react-router-dom
 
 **BACKEND FILES**
 
 models - 
-    Notes.js
-    User.js
-    UserReport.js
+
+* Notes.js
+* User.js
+* UserReport.js
 
 routes - 
-    Note.js
-    User.js
-    UserReport.js
+    
+* Note.js
+* User.js
+* UserReport.js
 
-.env file
-test.env file
-server.js file
-gitignore file
+* .env file
+* test.env file
+* server.js file
+* gitignore file
 
 **FRONTEND FILES**
 
-assets - 
-    css
-    images
+assets -
+
+* css
+* images
 
 components -
-    administrator (adminDashboard, userDetails, userReports, viewAdminList, viewStudentList)
-    footer
-    header
-    notesManagement (addNote, deleteNote, updateNote, viewNotes)
-    userManagement (login, register, forgotPW, resetPW)
 
-App.js file
-index.html file
-gitignore file
+* administrator (adminDashboard, userDetails, userReports, viewAdminList, viewStudentList)
+* footer
+* header
+* notesManagement (addNote, deleteNote, updateNote, viewNotes)
+* userManagement (login, register, forgotPW, resetPW)
+
+* App.js file
+* index.html file
+* gitignore file
 
 **IMPLEMENTATION**
 
